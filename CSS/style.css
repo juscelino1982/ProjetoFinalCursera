@@ -1,0 +1,317 @@
+/* ===============================
+   VARIÁVEIS DE ESTILO / PALETA
+   =============================== */
+:root {
+    --border-radius: 10px;                    /* Cantos arredondados padrão */
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);    /* Sombra padrão */
+    --primary-color: #44CCDD;                 /* Cor principal (header/rodapé) */
+    --secondary-color: #33AACC;               /* Cor secundária (hover, etc.) */
+    --action-color: #005fcc;                  /* Cor de foco/ação */
+    --background-color: #f9f9f9;              /* Cor de fundo do site */
+    --text-color: #333333;                    /* Cor principal do texto */
+}
+
+/* ===============================
+   LINK "PULAR PARA CONTEÚDO"
+   =============================== */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+    z-index: 100;
+    transition: top 0.3s ease;
+}
+.skip-link:focus {
+    top: 0; 
+}
+
+/* ===============================
+   ESTILOS GERAIS DE BODY E MAIN
+   =============================== */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+main {
+    flex: 1;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* ===============================
+   HEADER E RODAPÉ
+   =============================== */
+header, footer {
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #44CCDD;
+  color: white;
+  
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    flex-grow: 1; /* Ocupa espaço disponível */
+    text-align: center;
+}
+h1 {
+    margin: 0;
+    color: white; /* Título em branco */
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* ===============================
+   LOGO (NAV .LOGO)
+   =============================== */
+nav .logo {
+    width: 80px;
+    height: auto;
+    transform: scaleY(0.75);
+}
+
+/* ===============================
+   BOTÕES GERAIS
+   =============================== */
+button {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+/* ===============================
+   ÁREA DE EXIBIÇÃO (#image)
+   =============================== */
+#image {
+    width: 600px;
+    min-height: 600px;
+    overflow: hidden;
+    border: 3px solid var(--primary-color);
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin: 0 auto 40px auto;
+    box-sizing: border-box;
+    border-radius: var(--border-radius);
+    transition: background-image 0.5s ease, color 0.3s ease, opacity 0.5s ease;
+}
+/* Imagem e Parágrafo dentro de #image */
+#image img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.5s ease;
+    opacity: 1; /* Inicia invisível */
+}
+#image p {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+    transition: opacity 0.5s ease;
+    opacity: 1; /* Inicia invisível */
+}
+/* Quando adicionamos .visible via JS, fica opaco = 1 */
+#image img.visible,
+#image p.visible {
+    opacity: 1; 
+}
+
+/* ===============================
+   SEÇÃO PRINCIPAL (main-content)
+   =============================== */
+.main-content {
+    width: 90%;
+    max-width: none;
+    height: 600px; 
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: border 0.3s, box-shadow 0.3s;
+    margin: 0 auto 40px auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main-content img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: opacity 0.5s ease;
+}
+
+/* ===============================
+   GALERIA (gallery, gallery-item)
+   =============================== */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+.gallery-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    transition: border 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+.gallery-item:hover,
+.gallery-item:focus {
+    border: 2px solid var(--secondary-color);
+    box-shadow: 0 0 10px rgba(51, 170, 204, 0.5);
+    outline: none; 
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+figcaption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 1em;
+    color: #333;
+}
+
+/* ===============================
+   SEÇÃO FLEX (exemplo adicional)
+   =============================== */
+.flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+.flex > div {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+.flex > div:nth-child(1) {
+    background-color: var(--primary-color);
+}
+.flex > div:nth-child(2) {
+    background-color: var(--secondary-color);
+}
+
+/* ===============================
+   RESPONSIVIDADE (media queries)
+   =============================== */
+/* Para telas menores que 800px */
+@media (max-width: 800px) {
+    #image {
+        width: 90%;
+        min-height: 300px;
+    }
+    nav .logo {
+        width: 60px;
+        transform: scaleY(0.75);
+    }
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    header h1 {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .main-content {
+        width: 95%;
+    }
+}
+/* Para telas menores que 500px */
+@media (max-width: 500px) {
+    #image {
+        min-height: 250px;
+    }
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    nav .logo {
+        width: 50px;
+        transform: scaleY(0.75);
+    }
+    header h1 {
+        font-size: 1.5rem;
+    }
+    .main-content {
+        width: 100%;
+        height: auto;
+    }
+    .main-content img {
+        max-height: 600px;
+    }
+}
+
+/* ===============================
+   FOCUS VISÍVEL (ACESSIBILIDADE)
+   =============================== */
+.gallery-item:focus {
+    outline: 3px solid var(--action-color);
+}

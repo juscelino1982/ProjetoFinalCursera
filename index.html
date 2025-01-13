@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lab Galeria Interativa</title>
+
+  <!-- Importar CSS -->
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+
+<body>
+  <!-- Link para pular para o conteúdo principal (acessibilidade) -->
+  <a href="#conteudo-principal" class="skip-link">Pular para o Conteúdo Principal</a>
+
+  <header>
+    <!-- O nav pode conter a logo -->
+    <nav>
+      <!-- Ajuste o caminho da imagem da logo -->
+      <img src="images/logo.jpg" alt="Logo" class="logo"/>
+    </nav>
+    <h1>Bem-vindo ao Lab SAND-BOX</h1>
+  </header>
+
+  <main id="conteudo-principal">
+    <!-- Seção principal, com 600px de altura -->
+    <section class="main-content">
+      <h2>Conteúdo principal!</h2>
+      <!-- Ajuste o caminho da imagem de exemplo -->
+      <img src="images/example.jpg" alt="Imagem de Exemplo">
+    </section>
+
+    <!-- 
+      Botão de alerta (opcional).
+      Se não usar, pode remover. 
+      <button id="alertButton">Clique Aqui</button>
+    -->
+
+    <!-- Div de exibição da imagem selecionada/hover -->
+    <div id="image" aria-live="polite">
+      <!-- Essas duas tags são manipuladas pelo JavaScript -->
+      <img id="displayedImage" src="" alt="">
+      <p id="imageDescription">Passe o mouse sobre uma imagem abaixo para exibir aqui</p>
+    </div>
+
+    <!-- 
+      Botão para limpar a seleção de imagem.
+      Ao clicar, volta ao texto padrão e remove a seleção
+    -->
+    <button id="clearSelectionBtn" style="margin-bottom: 20px;">
+      Limpar Seleção
+    </button>
+
+    <!-- Galeria de Imagens -->
+    <section class="gallery">
+      <!-- Cada figure é um item da galeria (gallery-item) -->
+      <figure class="gallery-item">
+        <img 
+          src="images/img1.jpg"
+          alt="Descrição detalhada da Imagem 1"
+        />
+        <figcaption>Legenda da Imagem 1</figcaption>
+      </figure>
+
+      <figure class="gallery-item">
+        <img 
+          src="images/img2.jpg"
+          alt="Descrição detalhada da Imagem 2"
+        />
+        <figcaption>Legenda da Imagem 2</figcaption>
+      </figure>
+
+      <!-- Caso deseje mais imagens, adicione novos <figure>... -->
+    </section>
+
+    <!-- Seção Flex (exemplo de layout adicional) -->
+    <section class="flex">
+      <div>Item 1</div>
+      <div>Item 2</div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Juscelino Farrapo Moreira</p>
+  </footer>
+
+  <!-- Importar o arquivo JavaScript -->
+  <script src="JS/script.js"></script>
+</body>
+</html>
